@@ -1,34 +1,36 @@
-# require 'rest-client'
 require 'json'
 require 'pry'
 require 'httparty'
 
-  class GetPokemons
-
-    # URL = "https://phalt-pokeapi.p.mashape.com/pokemon"
+  class ApiCommunicator
     URL = "http://pokeapi.co/api/v2/pokemon"
 
     def get_pokemons(pokemon_name)
       # uri = URI.parse(URL)
       # response = Net::HTTP.get_response(uri)
       response = HTTParty.get("#{URL}/#{pokemon_name}")
-      binding.pry
       JSON.parse(response.body)
     end
 
-    def pokemon #?
-      #using the JSON library to parse the API response in a nice format JSON
-      #pokemons - hash
-      pokemons = JSON.parse(self.get_pokemons)
-      pokemons['results'].collect do |pokemon_name|
-        #iterate through to get me the pokemon name
-        pokemon_name
-      end
+    def pokemon(pokemon_name)
+      api_info = self.get_pokemons(pokemon_name)
+      result = {}
+
+      result["name"] = api_info["name"]
+      result["type"] = api_info["types"][0]["type"]["name"]
+      result["base_xp"] = api_info["base_experience"]
+
+      result = "#{pokemon_name.capitalize} is a type of #{result["type"]} pokemon with a base experience of #{result["base_xp"]}!"
+      # {"name"=>"pikachu", "type"=>"electric", "base_xp"=>112}
     end
   end
 
-  pokemons = GetPokemons.new
-  puts pokemons.pokemon.uniq
+  api = ApiCommunicator.new
+
+
+  binding.pry
+  1
+
 
 # response = RestClient.get("https://phalt-pokeapi.p.mashape.com/pokemon",
 #   {
@@ -37,5 +39,5 @@ require 'httparty'
 #   }
 # )
 
-binding.pry
-"hi"
+# binding.pry
+# "hi"

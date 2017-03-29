@@ -8,7 +8,7 @@ end
 
 def get_pokemon_name_from_user
   puts "Please enter a pokemon name"
-  response = gets.chomp
+  response = gets.chomp.downcase
 end
 
 binding.pry
