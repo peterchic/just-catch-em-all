@@ -25,11 +25,6 @@ require 'httparty'
     end
   end
 
-  api = ApiCommunicator.new
-
-
-  binding.pry
-  1
 
 
 # response = RestClient.get("https://phalt-pokeapi.p.mashape.com/pokemon",

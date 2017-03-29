@@ -2,15 +2,18 @@
 require 'json'
 require 'pry'
 
-def welcome
-  "Welcome to the Pokemon API browser."
-end
+class CommandLineInterface
+  def welcome
+    puts "Welcome to the Pokemon API browser."
+  end
 
-def get_pokemon_name_from_user
-  "Please enter a pokemon name"
-  response = gets.chomp.downcase
-end
+  def get_pokemon_name_from_user
+    puts "Please enter a pokemon name"
+    gets.chomp.downcase
+  end
 
-def give_stats_to_user(response)
-  api.poke_info(response)
+  def give_stats_to_user(response)
+    api = ApiCommunicator.new
+    puts api.poke_info(response)
+  end
 end
