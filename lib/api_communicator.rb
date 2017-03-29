@@ -12,7 +12,7 @@ require 'httparty'
       JSON.parse(response.body)
     end
 
-    def pokemon(pokemon_name)
+    def poke_info(pokemon_name)
       api_info = self.get_pokemons(pokemon_name)
       result = {}
 
