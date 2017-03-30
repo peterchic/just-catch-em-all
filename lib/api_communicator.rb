@@ -16,12 +16,16 @@ require 'httparty'
       api_info = self.get_pokemons(pokemon_name)
       result = {}
 
-      result["name"] = api_info["name"]
-      result["type"] = api_info["types"][0]["type"]["name"]
-      result["base_xp"] = api_info["base_experience"]
+      name = api_info["name"]
+      type = api_info["types"][0]["type"]["name"]
+      base_xp = api_info["base_experience"]
 
-      result = "#{pokemon_name.capitalize} is a type of #{result["type"]} pokemon with a base experience of #{result["base_xp"]}!"
+      result = "#{name.capitalize} is a type of #{type} pokemon with a base experience of #{base_xp}!"
       # {"name"=>"pikachu", "type"=>"electric", "base_xp"=>112}
+      # binding.pry
+      Pokemon.find_or_create_by(name: name)
+      puts "number of pkmn in db " + "#{Pokemon.all.length}"
+      result
     end
   end
 

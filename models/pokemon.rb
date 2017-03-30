@@ -1,3 +1,4 @@
 class Pokemon < ActiveRecord::Base
-  belongs_to :user
+  has_many :pokemon_users
+  has_many :users, through: :pokemon_users
 end
