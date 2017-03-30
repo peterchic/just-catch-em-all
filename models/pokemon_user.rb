@@ -1,6 +1,6 @@
-class Pokemon_user < ActiveRecord::Base
-  has_many :pokemons
-  has_many :users
+class PokemonUser < ActiveRecord::Base
+  belongs_to :pokemons
+  belongs_to :users
 
-  
+
 end
