@@ -18,6 +18,11 @@ class CommandLineInterface
     puts "Please enter your name."
     user_name = gets.strip.downcase
     #binding.pry
+    puts "
+
+Thanks #{user_name}! Did I say you're pretty awesome?
+
+    "
     User.new(name: user_name)
   end
 
@@ -27,10 +32,11 @@ class CommandLineInterface
   # end
 
   def get_pokemon_name_from_user
-    puts "Thanks! Now lets look for some Pokemon!
-Type in a name of your favorite Pokemon.
-Hint: Try typing in a number between
-1 and 721 and see what you find."
+    sleep(2)
+    puts "Now lets look for some Pokemon! Type in a name of your favorite Pokemon.
+Or try typing in a number between 1 and 721 and see what you find.
+
+"
     gets.strip.downcase
   end
 

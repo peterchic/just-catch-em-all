@@ -20,7 +20,9 @@ require 'httparty'
       type = api_info["types"][0]["type"]["name"]
       base_xp = api_info["base_experience"]
 
-      result = "#{name.capitalize} is a type of #{type} pokemon with a base experience of #{base_xp}!"
+      result = "
+
+#{name.capitalize} is a type of #{type} pokemon with a base experience of #{base_xp}!"
       # {"name"=>"pikachu", "type"=>"electric", "base_xp"=>112}
       # binding.pry
       Pokemon.find_or_create_by(name: name)
