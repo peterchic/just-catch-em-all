@@ -17,15 +17,17 @@ require 'httparty'
       result = {}
 
       name = api_info["name"]
-      type = api_info["types"][0]["type"]["name"]
+      poke_type = api_info["types"][0]["type"]["name"]
       base_xp = api_info["base_experience"]
 
       result = "
 
-#{name.capitalize} is a type of #{type} pokémon with a base experience of #{base_xp}!"
+#{name.capitalize} is a type of #{poke_type} pokémon with a base experience of #{base_xp}!"
       # {"name"=>"pikachu", "type"=>"electric", "base_xp"=>112}
       # binding.pry
       Pokemon.find_or_create_by(name: name)
+      # Pokemon.find_or_create_by(poke_type: type)
+      # Pokemon.find_or_create_by(base_xp: base_xp)
       puts "number of pkmn in db " + "#{Pokemon.all.length}"
       result
     end

@@ -29,7 +29,8 @@ class CommandLineInterface
     #binding.pry
     puts "
 
-Thanks #{user_name}! Did I say you're pretty awesome?
+Thanks #{user_name.capitalize}!
+Did I say you're pretty awesome?
 
     "
     User.new(name: user_name)
@@ -41,8 +42,9 @@ Thanks #{user_name}! Did I say you're pretty awesome?
   # end
 
   def get_pokemon_name_from_user
-    sleep(2)
-    puts "Now lets look for some Pokémon! Type in a name of your favorite Pokemon.
+    # sleep(2)
+    puts "Now lets look for some Pokémon!
+Type in a name of your favorite Pokémon.
 Or try typing in a number between 1 and 721 and see what you find.
 
 "
@@ -57,31 +59,31 @@ Or try typing in a number between 1 and 721 and see what you find.
   def artwork1
 
     puts"$                                      $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
     puts"$                                      $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
     puts"$             @@@@@@@@@@@@             $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
     puts"$           @@@@@@@@@@@@@@@@           $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
     puts"$         @@@@@@@@@@@@@@@@@@@@         $"
-    sleep(4.0/24.0)
-    puts"$        @@@@@@@@@----@@@@@@@@@        $"
-    sleep(4.0/24.0)
-    puts"$       @@@@@@@  ┌ -- ┐  @@@@@@@       $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
+    puts"$        @@@@@@@@@@@@@@@@@@@@@@        $"
+    # sleep(4.0/24.0)
+    puts"$       @@@@@@@@@┌ -- ┐@@@@@@@@@       $"
+    # sleep(4.0/24.0)
     puts"$       ████████| |██| |████████       $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
     puts"$       @        └ __ ┘        @       $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
     puts"$        @                    @        $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
     puts"$         @                  @         $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
     puts"$           @              @           $"
-    sleep(4.0/24.0)
+    # sleep(4.0/24.0)
     puts"$___________  @@@@@@@@@@@@  ___________$"
-    sleep(1)
+    # sleep(1)
   end
 
 
