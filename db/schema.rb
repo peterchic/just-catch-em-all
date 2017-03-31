@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170328195355) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string  "name"
-    t.string  "type"
+    t.string  "poke_type"
     t.integer "base_xp"
   end
 

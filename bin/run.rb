@@ -5,10 +5,11 @@ require_relative '../config/environment.rb'
 
 cli = CommandLineInterface.new
 
+
 cli.welcome
-sleep(3)
+sleep(2)
 cli.artwork1
-sleep(3)
+sleep(2)
 user_name = cli.enter_name
 # cli.new_user(user_name)
 pokemon = cli.get_pokemon_name_from_user
