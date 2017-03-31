@@ -38,11 +38,11 @@ You're looking pretty good today!
     puts "
 
 
-    Now let's look for some Pokémon!
+Now let's look for some Pokémon!
 
 
-    Type in a name of your favorite Pokémon.
-    Or try typing in a number between 1 and 721 and see what you find.
+Type in a name of your favorite Pokémon.
+Or try typing in a number between 1 and 721 and see what you find.
 
 "
     gets.strip.downcase
@@ -52,8 +52,8 @@ You're looking pretty good today!
     # sleep(2)
     puts "Now lets look for some Pokémon!
 
-    Type in a name of your favorite Pokémon.
-    Or try typing in a number between 1 and 721 and see what you find.
+Type in a name of your favorite Pokémon.
+Or try typing in a number between 1 and 721 and see what you find.
 
 "
     gets.strip.downcase

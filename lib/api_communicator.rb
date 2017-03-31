@@ -30,7 +30,7 @@ require 'httparty'
 
         result = "
 
-  #{name.capitalize} is a type of #{poke_type} pokémon with a base experience of #{base_xp}!"
+#{name.capitalize} is a type of #{poke_type} pokémon with a base experience of #{base_xp}!"
         # {"name"=>"pikachu", "type"=>"electric", "base_xp"=>112}
         # binding.pry
         pokemon = Pokemon.find_or_create_by(name: name, poke_type: poke_type, base_xp: base_xp)
@@ -46,5 +46,5 @@ require 'httparty'
         result
     end
 
-    
+
   end
