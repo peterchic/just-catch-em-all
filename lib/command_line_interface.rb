@@ -38,7 +38,7 @@ You're looking pretty good today!
     puts "
 
 
-    Now lets look for some Pokémon!
+    Now let's look for some Pokémon!
 
 
     Type in a name of your favorite Pokémon.
@@ -57,6 +57,7 @@ You're looking pretty good today!
 
 "
     gets.strip.downcase
+    give_stats_to_user(response)
   end
 
   def give_stats_to_user(response)
@@ -64,10 +65,34 @@ You're looking pretty good today!
     puts api.poke_info(response)
     sleep(2)
 
-    ask_user_to_search_again
+    give_options_to_user
   end
 
-  def ask_user_to_search_again
+  # def view_catched_pokemon_by_user
+  #   puts "Would you like to see your list, trainor #{user_name}?"
+  # end
+
+  def give_options_to_user
+      puts "Great find! What do you want to do next? Type in number."
+      puts "1. Search for a new pokemon by name"
+      puts "2. View a list of pokemons that you typed in."
+      puts "3. Exit the Pokemon API Browser"
+      puts "4. Get a programming joke."
+
+      user_option = gets.chomp
+
+      if user_option == "1"
+        more_pokemon?
+      elsif user_option == "2"
+        list_users_pokemon
+      elsif user_option == "3"
+        goodbye_user
+      else user_option == "4"
+        puts "What's the object-oriented way to become wealthy?"
+        sleep(2)
+        puts "Inheritance. Badum che!"
+      end
+
     puts "Great find! Would you like to search again? Type in another pokemon name."
     response_two = gets.chomp.downcase
     until response_two == "no" || response_two == "exit!"  || response_two == "quit"  || response_two == "q" do
@@ -77,39 +102,50 @@ You're looking pretty good today!
     system("open https://www.youtube.com/watch?v=JuYeHPFR3f0")
   end
 
-  def artwork1
+  def goodbye_user
+    puts "Good bye! See you next time trainer!"
+    system("open https://www.youtube.com/watch?v=JuYeHPFR3f0")
+  end
 
+  def list_users_pokemon
+    # binding.pry
+    self.user.pokemons.uniq.each do |pokemon_instance|
+      puts pokemon_instance.name
+    end
+  end
+
+  def artwork1
     puts"$                                      $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$                                      $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$                 ãããã                 $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$             @@@@@@@@@@@@             $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$           @@@@@@@@@@@@@@@@           $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$         @@@@@@@@@@@@@@@@@@@@         $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$        @@@@@@@@@@@@@@@@@@@@@@        $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$       @@@@@@@@@┌ -- ┐@@@@@@@@@       $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$       ████████| |██| |████████       $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$       @        └ __ ┘        @       $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$        @                    @        $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$         @                  @         $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$           @              @           $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$              @        @              $"
-    # sleep(4.0/24.0)
+    sleep(4.0/24.0)
     puts"$_________________©©©©_________________$"
     sleep(9.0/24.0)
-    system("clear")
+    #system("clear")
   end
 
 
