@@ -3,6 +3,7 @@ require 'json'
 require 'pry'
 require_relative '../models/user.rb'
 
+
 class CommandLineInterface
   # attr_reader :user_name
   #
@@ -11,11 +12,19 @@ class CommandLineInterface
   # end
 
   def welcome
-    puts "Welcome to the Pokemon API browser."
+    puts"########################################"
+    puts"#                                      #"
+    puts"#                                      #"
+    puts"#    ▓▓     Welcome to Our      ▓▓     #"
+    puts"#    ▓▓   Pokémon API Browser   ▓▓     #"
+    puts"#                                      #"
+    puts"#                                      #"
+    puts"########################################"
   end
 
   def enter_name
-    puts "Please enter your name."
+    puts "
+     *** Please enter your name ***"
     user_name = gets.strip.downcase
     #binding.pry
     puts "
@@ -33,7 +42,7 @@ Thanks #{user_name}! Did I say you're pretty awesome?
 
   def get_pokemon_name_from_user
     sleep(2)
-    puts "Now lets look for some Pokemon! Type in a name of your favorite Pokemon.
+    puts "Now lets look for some Pokémon! Type in a name of your favorite Pokemon.
 Or try typing in a number between 1 and 721 and see what you find.
 
 "
@@ -44,4 +53,44 @@ Or try typing in a number between 1 and 721 and see what you find.
     api = ApiCommunicator.new
     puts api.poke_info(response)
   end
+
+  def artwork1
+
+    puts"$                                      $"
+    sleep(4.0/24.0)
+    puts"$                                      $"
+    sleep(4.0/24.0)
+    puts"$             @@@@@@@@@@@@             $"
+    sleep(4.0/24.0)
+    puts"$           @@@@@@@@@@@@@@@@           $"
+    sleep(4.0/24.0)
+    puts"$         @@@@@@@@@@@@@@@@@@@@         $"
+    sleep(4.0/24.0)
+    puts"$        @@@@@@@@@----@@@@@@@@@        $"
+    sleep(4.0/24.0)
+    puts"$       @@@@@@@  ┌ -- ┐  @@@@@@@       $"
+    sleep(4.0/24.0)
+    puts"$       ████████| |██| |████████       $"
+    sleep(4.0/24.0)
+    puts"$       @        └ __ ┘        @       $"
+    sleep(4.0/24.0)
+    puts"$        @                    @        $"
+    sleep(4.0/24.0)
+    puts"$         @                  @         $"
+    sleep(4.0/24.0)
+    puts"$           @              @           $"
+    sleep(4.0/24.0)
+    puts"$___________  @@@@@@@@@@@@  ___________$"
+    sleep(1)
+  end
+
+
+
+
+
+
+
+
+
+
 end
