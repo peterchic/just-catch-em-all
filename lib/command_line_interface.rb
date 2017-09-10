@@ -1,4 +1,3 @@
-# require 'rest-client'
 require 'json'
 require 'pry'
 require_relative '../models/user.rb'
@@ -9,7 +8,6 @@ class CommandLineInterface
   def enter_name
     puts "*** Please enter your name ***"
     user_name = gets.strip.downcase
-
     puts "Thanks #{user_name.capitalize}! You're looking pretty good today!"
     self.user = User.find_or_create_by(name: user_name)
   end
@@ -35,7 +33,6 @@ class CommandLineInterface
       puts "3. Exit the Pokemon API Browser"
       puts "4. Get a programming joke then exit."
       user_option = gets.chomp
-
       if user_option == "1"
         user_search
       elsif user_option == "2"
@@ -48,8 +45,10 @@ class CommandLineInterface
   end
 
   def list_users_pokemon
-    self.user.pokemons.uniq.each do |pokemon_instance|
-      puts pokemon_instance.name
+    self.user.pokemons.uniq.each do |poke|
+      name = poke.name.capitalize
+      type = poke.poke_type.capitalize
+      puts "ID: #{poke.id} | Name: #{name} | Type: #{type} | Base XP: #{poke.base_xp}"
     end
     give_options_to_user
   end
